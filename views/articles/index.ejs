@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mb-4">Blog Articles</h1>
+      <a
+        name=""
+        id=""
+        class="btn btn-success"
+        href="/articles/new"
+        role="button"
+        >Articles</a
+      >
+      <% articles.forEach(article => { %>
+      <div class="card mt-4">
+        <div class="card-body">
+          <h4 class="card-title"><%= article.title %></h4>
+          <div class="card-subtitle text-muted">
+            <%= article.createdAt.toLocaleDateString() %>
+          </div>
+          <div class="card-text mb2">
+            <%= article.description %>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </body>
+</html>
