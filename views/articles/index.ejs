@@ -22,7 +22,7 @@
         role="button"
         >Articles</a
       >
-      <% articles.forEach(article => { %>
+      <% articles.forEach(article=> { %>
       <div class="card mt-4">
         <div class="card-body">
           <h4 class="card-title"><%= article.title %></h4>
@@ -32,6 +32,17 @@
           <div class="card-text mb2">
             <%= article.description %>
           </div>
+          <hr />
+          <a href="/articles/<%= article.slug %> " class="btn btn-primary"
+            >Read More</a
+          >
+          <form
+            action="/articles/<%= article.id %>?_method=DELETE"
+            method="POST"
+            class="d-inline"
+          >
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
         </div>
       </div>
       <% }) %>
