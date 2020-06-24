@@ -17,7 +17,6 @@ app.use('/articles', require('./routes/articles'));
 app.use('*', function (req, res, next) {
   res.send('404 page');
 });
-console.log("asdasd");
 app.listen(port, () => {
   console.log('server listening on ' + port);
 });
